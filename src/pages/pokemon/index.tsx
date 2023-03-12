@@ -42,7 +42,7 @@ function PokemonList({ pokemon }: PokemonListProps) {
     <>
       <PageContainer>
         <Grid container spacing={1}>
-          <Grid container item spacing={3}>
+          <Grid container justifyContent="center" item spacing={3}>
             {pokemon.map((x) => (
               <ListCardItem key={x.id} name={x.name} image={x.image} />
             ))}
