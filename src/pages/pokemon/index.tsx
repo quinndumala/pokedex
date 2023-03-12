@@ -1,5 +1,9 @@
 import { Pokemon } from "@/common/types";
 import ListCardItem from "@/components/ListCardItem";
+import PageContainer from "@/components/PageContainer";
+import { CapitalizeFirstLetter } from "@/util/Util";
+import { Grid } from "@mui/material";
+import { Stack } from "@mui/system";
 import { GetServerSidePropsContext } from "next";
 
 interface PokemonListProps {
@@ -23,7 +27,7 @@ export const getServerSideProps = async (
     const mon = result as any;
     return {
       id: mon.id,
-      name: mon.name,
+      name: CapitalizeFirstLetter(mon.name),
       types: mon.types,
       image: mon.sprites.other["official-artwork"]["front_default"],
     };
@@ -36,10 +40,15 @@ function PokemonList({ pokemon }: PokemonListProps) {
   console.log("pokemon list length: ", pokemon.length);
   return (
     <>
-      <h1>List of Pokemon</h1>
-      {pokemon.map((x) => (
-        <ListCardItem key={x.id} name={x.name} image={x.image} />
-      ))}
+      <PageContainer>
+        <Grid container spacing={1}>
+          <Grid container item spacing={3}>
+            {pokemon.map((x) => (
+              <ListCardItem key={x.id} name={x.name} image={x.image} />
+            ))}
+          </Grid>
+        </Grid>
+      </PageContainer>
     </>
   );
 }

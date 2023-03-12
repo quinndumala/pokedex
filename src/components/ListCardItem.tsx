@@ -13,13 +13,14 @@ interface ListCardItemProps {
 
 function ListCardItem({ name, image }: ListCardItemProps) {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 285, margin: "1em" }}>
       <CardActionArea>
         <CardMedia
           component="img"
-          height="140"
+          height="220"
           image={image}
           alt="green iguana"
+          sx={{ padding: "1em", objectFit: "contain" }}
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
