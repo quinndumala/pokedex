@@ -5,6 +5,8 @@ import { CapitalizeFirstLetter } from "@/util/Util";
 import { Grid } from "@mui/material";
 import { Stack } from "@mui/system";
 import { GetServerSidePropsContext } from "next";
+import Link from "next/link";
+import styles from "../styles/pokemon.module.css";
 
 interface PokemonListProps {
   pokemon: Pokemon[];
@@ -44,7 +46,13 @@ function PokemonList({ pokemon }: PokemonListProps) {
         <Grid container spacing={1}>
           <Grid container justifyContent="center" item spacing={3}>
             {pokemon.map((x) => (
-              <ListCardItem key={x.id} name={x.name} image={x.image} />
+              <Link
+                key={x.id}
+                href={`pokemon/${x.id}`}
+                className={styles.pokemonCardTitle}
+              >
+                <ListCardItem key={x.id} name={x.name} image={x.image} />
+              </Link>
             ))}
           </Grid>
         </Grid>

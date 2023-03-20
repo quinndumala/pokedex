@@ -5,13 +5,14 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
 import { Pokemon } from "@/common/types";
+import { forwardRef } from "react";
 
 interface ListCardItemProps {
   name: string;
   image: string;
 }
 
-function ListCardItem({ name, image }: ListCardItemProps) {
+const ListCardItem = forwardRef<{}, ListCardItemProps>(({ name, image }, _) => {
   return (
     <Card sx={{ maxWidth: 285, margin: "1em" }}>
       <CardActionArea>
@@ -30,6 +31,7 @@ function ListCardItem({ name, image }: ListCardItemProps) {
       </CardActionArea>
     </Card>
   );
-}
+});
 
+ListCardItem.displayName = "ListCardItem";
 export default ListCardItem;
