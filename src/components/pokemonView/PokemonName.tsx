@@ -1,5 +1,5 @@
 import { Typography } from "@mui/material";
-import styles from "./styles/components.module.css";
+import styles from "./styles/pokemonName.module.css";
 
 interface PokeomonNameProps {
   name: string;
@@ -9,7 +9,11 @@ interface PokeomonNameProps {
 function PokemonName({ name, dexNumber }: PokeomonNameProps) {
   return (
     <>
-      <Typography className={styles.pokemonNameHeader} variant="h5">
+      <Typography
+        className={styles.pokemonNameHeader}
+        variant="h6"
+        color="text.secondary"
+      >
         {dexNumber}
       </Typography>
       <Typography className={styles.pokemonNameHeader} variant="h4">

@@ -3,5 +3,5 @@ export function CapitalizeFirstLetter(name: string) {
 }
 
 export function FormatDexNumber(dexNumber: number) {
-  return "#" + String(dexNumber).padStart(4, "0");
+  return "#" + String(dexNumber).padStart(3, "0");
 }
