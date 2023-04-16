@@ -78,7 +78,7 @@ function PokemonView({ pokemonData }: PoekemonViewProps) {
     <>
       <Color src={pokemonData.image} crossOrigin="anonymous" format="hex">
         {({ data, loading }) => {
-          if (loading || !data) return <div>Loading</div>;
+          if (loading || !data) return <div>Loading....</div>;
           return (
             <ViewBackground color={data}>
               <Grid container spacing={1} sx={{ height: "100%" }}>

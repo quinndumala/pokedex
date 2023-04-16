@@ -8,7 +8,7 @@ interface PokeomonNameProps {
 
 function PokemonName({ name, dexNumber }: PokeomonNameProps) {
   return (
-    <>
+    <div>
       <Typography
         className={styles.pokemonNameHeader}
         variant="h6"
@@ -16,10 +16,12 @@ function PokemonName({ name, dexNumber }: PokeomonNameProps) {
       >
         {dexNumber}
       </Typography>
-      <Typography className={styles.pokemonNameHeader} variant="h4">
-        {name}
-      </Typography>
-    </>
+      <div>
+        <Typography className={styles.pokemonNameHeader} variant="h4">
+          {name}
+        </Typography>
+      </div>
+    </div>
   );
 }
 
