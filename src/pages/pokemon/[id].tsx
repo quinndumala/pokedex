@@ -9,6 +9,7 @@ import Color from "color-thief-react";
 import ViewBackground from "@/components/pokemonView/ViewBackground";
 import PokemonInfoCard from "@/components/pokemonView/PokemonInfoCard";
 import Grid from "@mui/material/Unstable_Grid2";
+import LoadingView from "@/components/LoadingView";
 
 interface PoekemonViewProps {
   pokemonData: Pokemon;
@@ -78,7 +79,8 @@ function PokemonView({ pokemonData }: PoekemonViewProps) {
     <>
       <Color src={pokemonData.image} crossOrigin="anonymous" format="hex">
         {({ data, loading }) => {
-          if (loading || !data) return <div>Loading....</div>;
+          if (loading || !data) return <LoadingView />;
+
           return (
             <ViewBackground color={data}>
               <Grid container spacing={1} sx={{ height: "100%" }}>
@@ -88,10 +90,6 @@ function PokemonView({ pokemonData }: PoekemonViewProps) {
                   alignItems="center"
                   sx={{ display: "flex" }}
                 >
-                  {/* <PokemonName
-                    name={CapitalizeFirstLetter(pokemonData.name)}
-                    dexNumber={FormatDexNumber(pokemonData.id)}
-                  /> */}
                   <PokemonImage imageURL={pokemonData.image} />
                 </Grid>
                 <Grid
