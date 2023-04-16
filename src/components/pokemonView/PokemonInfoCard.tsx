@@ -3,6 +3,7 @@ import { Pokemon } from "@/common/types";
 import PokemonName from "./PokemonName";
 import { CapitalizeFirstLetter, FormatDexNumber } from "@/util/Util";
 import PokemonTypesIcon from "./PokemonTypesIcon";
+import PokemonStats from "./PokemonStats";
 
 interface PokemonInfoCardProps {
   pokemonData: Pokemon;
@@ -38,6 +39,7 @@ function PokemonInfoCard({ pokemonData }: PokemonInfoCardProps) {
           </Typography>
         </div>
         <Divider sx={{ p: 1 }} />
+        <PokemonStats stats={pokemonData.stats} />
       </CardContent>
     </Card>
   );

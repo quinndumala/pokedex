@@ -85,7 +85,7 @@ function PokemonView({ pokemonData }: PoekemonViewProps) {
             <ViewBackground color={data}>
               <Grid container spacing={1} sx={{ height: "100%" }}>
                 <Grid
-                  lg={7}
+                  lg={6}
                   justifyContent="center"
                   alignItems="center"
                   sx={{ display: "flex" }}
@@ -93,7 +93,7 @@ function PokemonView({ pokemonData }: PoekemonViewProps) {
                   <PokemonImage imageURL={pokemonData.image} />
                 </Grid>
                 <Grid
-                  lg={5}
+                  lg={6}
                   justifyContent="left"
                   alignItems="center"
                   sx={{ display: "flex" }}
